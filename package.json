@@ -21,7 +21,7 @@
     "install-client": "cd client && yarn",
     "heroku-postbuild": "yarn run install-client && yarn build",
     "start": "node server.js",
-    "develop": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run start --prefix client\"",
+    "develop": "concurrently --kill-others-on-fail \"nodemon server.js\" \"echo 'NEED TO INCORPORATE HMR'\"",
     "start1": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run start --prefix client\""
   }
 }
