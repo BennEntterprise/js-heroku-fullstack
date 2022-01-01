@@ -12,6 +12,9 @@
     "express": "^4.17.2",
     "mongoose": "^6.1.4"
   },
+  "engines": {
+    "node": "14.17.x"
+  },
   "scripts": {
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
