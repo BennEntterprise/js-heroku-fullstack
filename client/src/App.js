@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react'
 
 function App() {
   const [connectionToBackend, setConnectionToBackend] = useState('')
-  const [todos, setTodos] = useState('')
-  useEffect(() => {
+  const [todos, setTodos] = useState([])
 
+  useEffect(() => {
     fetch('/api').then(res => res.json()).then((data => {
       console.log(data)
       setConnectionToBackend(data.message)
@@ -14,12 +14,8 @@ function App() {
 
     fetch('/api/todos').then(res => res.json()).then((data => {
       console.log(data)
-      setTodos(JSON.stringify(data))
+      setTodos(data.todos)
     })).catch(e => console.log(e))
-
-    return () => {
-      // Noop
-    }
   }, [])
 
   return (
@@ -27,17 +23,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Server Connection? : {connectionToBackend}
-          MongoConnection to Todos?: {todos}
+          Connected to backend?: {connectionToBackend}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>MongoConnection to Todos?: (should see todo's below)</p>
+        <ul>{todos.map((todo, i) => <li key={i}>{todo.task}</li>)}</ul>
       </header>
     </div>
   );
