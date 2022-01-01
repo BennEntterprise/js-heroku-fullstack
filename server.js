@@ -15,7 +15,8 @@ const {
     MONGO_USERNAME,
     MONGO_PASSWORD,
     MONGO_POSTPEND,
-    TEST
+    TEST,
+    NODE_ENV
 } = process.env
 console.log(`Have env vars loaded? (test string): ${TEST}`)
 const HOST = process.env.HOST || 'localhost'
@@ -63,7 +64,7 @@ app.get('/api', (req, res) => {
 })
 
 app.get("*", (req, res) => {
-    resp.sendFile(path.resolve(__dirname, './client/build', 'index.html'))
+    res.sendFile(path.resolve(__dirname, './client/build', 'index.html'))
 })
 
 app.listen(PORT, () => {

@@ -1,9 +1,0 @@
-- package.json: Organize Scripts.
-    - Develop frontend
-    - Develop backend
-    - Build (including TS if needed)
-    - Start the deployed project. 
-- App.js: whitespacing
-- App.js: remove extra returns.
-- App.js: fix the formatting of the paragraphs to render nicer. 
-- App.js: remove react boilerplate?

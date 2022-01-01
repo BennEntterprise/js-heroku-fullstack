@@ -26,3 +26,10 @@
 * Outline the local development script (goal is to have HMR for both front and backend.)
 * Add TS to the frontend CRA
 * Add TS to backend
+
+
+## Working locally
+1) Instal both deps for root folder and client folder.
+2) `yarn develop` , uses nodemon to reload server. 
+3) Make changes in frontend, then run `yarn build`
+4) Refresh/navigate to the required port.
