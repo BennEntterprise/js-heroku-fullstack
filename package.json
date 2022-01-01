@@ -1,0 +1,23 @@
+{
+  "name": "js-heroku-fullstack",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "@BennEntterprise <kyle.bennett@betweenfiveandnine.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "concurrently": "^6.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.4"
+  },
+  "scripts": {
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "server": "nodemon server.js",
+    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
+  }
+}
