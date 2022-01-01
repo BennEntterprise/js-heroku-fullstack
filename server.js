@@ -15,7 +15,7 @@ const {
     MONGO_POSTPEND,
 } = process.env
 const HOST = process.env.HOST || 'localhost'
-const PORT = process.env.PORT || 8888;
+const PORT = process.env.PORT || 1234;
 
 // Import Models
 const TodosModel = require('./models/Todo')
