@@ -20,7 +20,7 @@
     "build": "cd client && yarn run build",
     "install-client": "cd client && yarn",
     "heroku-postbuild": "yarn run install-client && yarn build",
-    "server": "nodemon server.js",
+    "server": "node server.js",
     "develop": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run start --prefix client\"",
     "start": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run start --prefix client\""
   }
